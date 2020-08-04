@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character component renders Character image 1`] = `
+<div>
+  <img
+    src="im an image"
+  />
+</div>
+`;
