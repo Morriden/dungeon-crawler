@@ -13,7 +13,7 @@ import {
 
 export const initialState = {
   character: {
-    image: '',
+    image: 'https://www.pinclipart.com/picdir/middle/544-5443053_male-medieval-adventurer-with-lantern-medieval-male-adventurers.png',
     health: 20,
     attack: 2,
     energy: 10,

@@ -13,11 +13,11 @@ export const useDispatch = () => {
 };
 
 export const useCharacter = () => {
-  const { character } = useContext(GameContext);
+  const { character } = useState();
   return character;
 };
 
 export const useEnemy = () => {
-  const { enemy } = useContext(GameContext);
+  const { enemy } = useState();
   return enemy;
 };
