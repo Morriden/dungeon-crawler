@@ -1,14 +1,24 @@
 import {
   goblin,
   orc,
-  ogre
+  ogre,
+  spawnMonster
 } from '../data/enemies';
+
+import {
+  entrance,
+  roomOne,
+  roomTwo,
+  newLocation,
+} from '../data/locations';
 
 import {
   UPDATE_EXPERIENCE,
   ATTACK_ENEMY,
   HEAL,
-  ATTACK_CHARACTER
+  ATTACK_CHARACTER,
+  UPDATE_LOCATION,
+  SET_ENEMY
 } from '../data/actions';
 
 export const initialState = {
@@ -24,13 +34,13 @@ export const initialState = {
     orc,
     ogre
   ],
-  enemy: {
-    image: 'https://lh3.googleusercontent.com/proxy/NrJv5js3pxontrn5gdrKVXNWyzgso9m-HEJ4HVDd5npejlClQHykz2MmeHc4n9cGhCyllVD86u9JXc4R4xbUs5te0dAHerD7U8aVdE1lK25KbbPE3Dc',
-    health: 3,
-    attack: 1,
-    energy: 10,
-    experience: 1
-  }
+  locations: [
+    entrance,
+    roomOne,
+    roomTwo
+  ],
+  enemy: goblin,
+  location: entrance
 };
 
 export default function reducer(state, action) {
@@ -63,6 +73,10 @@ export default function reducer(state, action) {
           experience: state.character.experience + state.enemy.experience
         }
       };
+    case SET_ENEMY:
+      return { ...state, enemy: spawnMonster(state.location) };
+    case UPDATE_LOCATION:
+      return { ...state, location: newLocation(state.location) };
     default:
       return state;
   }

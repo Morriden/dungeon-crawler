@@ -1,3 +1,9 @@
+import {
+  entrance,
+  roomOne,
+  roomTwo,
+} from '../data/locations';
+
 export const goblin = {
   image: 'https://lh3.googleusercontent.com/proxy/NrJv5js3pxontrn5gdrKVXNWyzgso9m-HEJ4HVDd5npejlClQHykz2MmeHc4n9cGhCyllVD86u9JXc4R4xbUs5te0dAHerD7U8aVdE1lK25KbbPE3Dc',
   health: 3,
@@ -21,3 +27,15 @@ export const ogre = {
   energy: 20,
   experience: 7
 };
+
+export function spawnMonster(currentLocation) {
+  if(currentLocation === entrance) {
+    return goblin;
+  }
+  if(currentLocation === roomOne) {
+    return orc;
+  }
+  if(currentLocation === roomTwo) {
+    return ogre;
+  }
+}
