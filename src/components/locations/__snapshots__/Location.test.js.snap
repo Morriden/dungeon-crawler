@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`location component renders the location 1`] = `
+<section>
+  Title: 
+  im a title
+  <img
+    src="im an image"
+  />
+  Description: 
+  im an image
+</section>
+`;
